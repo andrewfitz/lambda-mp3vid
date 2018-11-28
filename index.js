@@ -10,7 +10,7 @@ var upload = require('lambduh-put-s3-object');
 var enableTitle = true; //set to false if you don't need to write unique text to your thumb image
 var doUpload = true; //set to false if you don't want to upload avi for testing
 
-process.env['PATH'] = process.env['PATH'] + ':/tmp/:' + process.env['LAMBDA_TASK_ROOT']
+process.env['PATH'] = process.env['PATH'] + ':/tmp/:' + process.env['LAMBDA_TASK_ROOT'];
 
 function delay(t, val) {
    return new Promise(function(resolve) {
@@ -70,7 +70,7 @@ exports.handler = async function(event, context) {
     }
   });
 
-  var pp = await delay(1000);
+  var pp = await delay(2000);
 
   var jjj = await upload(event, {
     dstBucket: event.srcBucket,
