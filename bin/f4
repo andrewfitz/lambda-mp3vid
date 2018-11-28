@@ -1,5 +1,4 @@
 #!/bin/bash
 
 int=$(mp3info -p "%S" $1)
-echo int
 ffmpeg -y -i $1 -r 0.1 -loop 1 -i $2 -q:v 2 -t $int -acodec copy $3
